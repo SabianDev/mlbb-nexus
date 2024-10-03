@@ -1,0 +1,295 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* tagCOLOR */
+:root {
+    --font-color: #ffffff;
+    --background-color-header: #1c233a;
+    --background-color-footer: #111111;
+    --background-color: #141c2f;
+    --auth-options-bg: #0f1320;
+    --border-color: #222a44;
+    --carousel-caption-bg: rgba(0, 0, 0, 0.5);
+    --carousel-control-bg: rgba(0, 0, 0, 0.5);
+    --bg-tag: #45568d;
+    --bg-news: #1c233a;
+    --search-button : #43589b;
+}
+
+body {
+    font-family: "Inter", sans-serif; /* Menggunakan font Inter */
+    background: url('images/bg.jpg') no-repeat center center fixed; /* Mengatur gambar latar belakang */
+    background-attachment: fixed;
+    background-size: cover; /* Memastikan gambar menutupi seluruh area */
+    color: var(--font-color);
+    line-height: 1.6;
+    padding-top: 100px; /* Tambahkan padding untuk menghindari konten tertutup header dan auth-options */
+}
+
+.container {
+    margin: 0 100px;
+    margin-top: 0px;
+    padding: 20px;
+    background-color: var(--background-color);
+}
+
+.auth-options {
+    background-color: var(--auth-options-bg);
+    padding: 10px 20px;
+    text-align: right;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Pastikan auth-options berada di atas elemen lain */
+}
+
+.auth-options a {
+    color: var(--font-color);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.auth-options a:hover {
+    text-decoration: underline;
+}
+
+/* tagHEADER */
+header {
+    background-color: var(--background-color-header);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 40px; /* Posisi di bawah auth-options */
+    width: 100%;
+    z-index: 999; /* Pastikan header berada di bawah auth-options */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Menambahkan shadow untuk container header */
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+/* tagCAROUSEL */
+.carousel-container {
+    width: 100%;
+    height: 50vh;
+    border: 10px solid var(--border-color); /* Menambahkan border abu-abu dengan ukuran kecil */
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--carousel-caption-bg);
+    color: var(--font-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--carousel-control-bg);
+    color: var(--font-color);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 998;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    border-bottom: 2px solid var(--font-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: var(--background-color-footer);
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    bottom: 0;
+}
+
+/* tagNEWS */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    grid-template-rows: repeat(3, auto); /* 3 baris */
+    gap: 20px; /* Jarak antara item */
+}
+
+.news-item {
+    padding: 10px;
+    display: flex;
+    background-color: var(--bg-news);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-image {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+}
+
+.news-image img {
+    width: 150px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-info {
+    padding: 10px;
+    color: var(--font-color);
+    flex: 1;
+}
+
+.news-info h3 {
+    margin: 0 0 10px 0;
+}
+
+.news-info p {
+    margin: 0 0 10px 0;
+}
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.news-meta .tags {
+    display: flex;
+    gap: 5px;
+}
+
+.news-meta .tags span {
+    background-color: var(--bg-tag);
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.news-meta .views-date {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.news-meta .views, .news-meta .date {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.news-more {
+    display: flex; /* Menggunakan flexbox */
+    justify-content: center; /* Memposisikan teks ke tengah secara horizontal */
+}
+
+.news-more a {
+    color: lightgray; /* Mengatur warna default menjadi light gray */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-weight: bold; /* Mengatur ketebalan font default */
+    margin-top: 10px;
+    /* text-align: center; */ /* Menghapus text-align karena tidak diperlukan dengan flex */
+}
+
+.news-more a:hover {
+    color: white; /* Mengubah warna menjadi putih saat hover */
+}
+
+/*tagSearch*/
+.search-bar {
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    align-items: center; /* Memposisikan item secara vertikal di tengah */
+    margin-bottom: 25px;
+}
+
+.search-bar i {
+    color : white;
+}
+
+.search-bar input {
+    border-radius: 20px; /* Mengatur border-radius */
+    border: 2px solid var(--border-color); /* Mengatur ketebalan border */
+    padding: 10px; /* Menambahkan padding */
+    flex: 1; /* Membuat input mengisi ruang yang tersedia */
+    margin-right: 10px; /* Jarak antara input dan button */
+}
+
+.search-bar button {
+    background-color: var(--search-button); /* Warna latar belakang button */
+    border: none; /* Menghilangkan border default */
+    border-radius: 20px; /* Mengatur border-radius */
+    padding: 10px 15px; /* Menambahkan padding */
+    cursor: pointer; /* Mengubah kursor saat hover */
+}
